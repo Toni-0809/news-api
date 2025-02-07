@@ -93,9 +93,24 @@ services:
         condition: service_healthy
         restart: true
     ports:
+      - "8081:8080"
+    networks:
+      - backend
+
+  weather:
+    image: ${DOCKER_REGISTRY-}weather
+    build:
+      context: .
+      dockerfile: Weather/Dockerfile
+    ports:
       - "8080:8080"
     networks:
       - backend
+
+
+
+
+
 
 volumes:
   pgadmin-data:
