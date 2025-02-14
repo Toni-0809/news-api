@@ -10,17 +10,7 @@
           "Port": 8080
         }
       ],
-      "DownstreamPathTemplate": "/api/topic",
-      "AuthenticationOptions": {
-        "AuthenticationProviderKey": "Bearer",
-        "AllowedScopes": []
-      },
-      "RouteClaimsRequirement": {
-        "Role": [
-          "Administrator",
-          "User"
-        ]
-      }
+      "DownstreamPathTemplate": "/api/topic"
     }
   ],
   "GlobalConfiguration": {
