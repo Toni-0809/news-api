@@ -108,6 +108,16 @@ services:
     networks:
       - backend
 
+  apigateway:
+    image: ${DOCKER_REGISTRY-}apigateway
+    build:
+      context: .
+      dockerfile: ApiGateway/Dockerfile
+    ports:
+      - "8083:8080"
+    networks:
+      - backend
+
 volumes:
   pgadmin-data:
   news-data:
@@ -117,3 +127,4 @@ networks:
     driver: bridge
   backend:
     driver: bridge
+
