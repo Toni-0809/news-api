@@ -98,19 +98,15 @@ services:
       - backend
 
   weather:
+    container_name: weather-api
     image: ${DOCKER_REGISTRY-}weather
     build:
       context: .
-      dockerfile: Weather/Dockerfile
+      dockerfile: ./Weather/Dockerfile
     ports:
       - "8080:8080"
     networks:
       - backend
-
-
-
-
-
 
 volumes:
   pgadmin-data:
